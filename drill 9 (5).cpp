@@ -30,7 +30,7 @@ vector<string> months {
       }
 
       class Date {
-      public;
+      public:
        Date() : y(2001), m(Month::jan), d(1) {}
        Date(int y, Month m, int d)
        : y(y), m(m), d(d)
@@ -75,16 +75,15 @@ vector<string> months {
         ostream& operator << (ostream& os, Month m) {
          return os << months[int(m)];
        }
-       ostream& operator << (ostream& os. Date& date) {
+       ostream& operator << (ostream& os, Date& date) {
         return os << date.year() << "."
                   << date.month() << ","
                   << date.day() << "\n";
         }
 
-        }
+
 
         void version5() {
-        using namespace Version5;
         cout << "\tversion5 - 9.7.4" << endl;
         Date d_default;
         cout << "Default date: " << d_default << endl;
@@ -96,7 +95,7 @@ vector<string> months {
         cout << "\nTomorrow: " << tomorrow << endl;
         Date next_month = today;
         next_month.add_month(1);
-        cout << "Next month: " << next_mouth << endl;
+        cout << "Next month: " << next_month << endl;
         Date next_year = today;
         next_year.add_year(1);
         cout << "Next year: " << next_year << endl;
