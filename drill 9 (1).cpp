@@ -11,7 +11,7 @@ struct Date {
 
 
 
- onstream& operator << (onstream& os, const Date& date)
+ ostream& operator<<(ostream& os, const Date& date)
  {
     return os << date.y << "."
               << date.m << "."
@@ -29,7 +29,7 @@ struct Date {
  }
 
  void add_day(Date& dd, int n) {
-    init_day(dd, dd.y, dd.d, dd.m)'
+    init_day(dd, dd.y, dd.m, dd.d);
     dd.d+=n;
     if(dd.d>31){
        ++dd.m;
