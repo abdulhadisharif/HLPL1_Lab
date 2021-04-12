@@ -21,14 +21,14 @@ namespace Version4 {
    enum class Month {
      jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec
      };
-     month operator++(Month& m) {
+     Month operator++(Month& m) {
        m = (m == Month::dec) ? Month::jan : Month(int(m)+1);
         return m;
        }
 
        class Date {
-       public;
-        Date(int y, month m, int d)
+       public:
+        Date(int y, Month m, int d)
         : y(y), m(m), d(d)
         {
          if(y < 0) error("Invalid year!");
@@ -66,9 +66,9 @@ namespace Version4 {
       }
 
       void version4() {
-       using namespace version4;
+       using namespace Version4;
        cout << "\tVersion4 - 9.7.1" << endl;
-       Date today {1978, Month::jun, 25};
+       Date today{1978, Month::jun, 25};
        cout << "Today: " << today << endl;
        cout << "Month: " << today.month() << endl;
        Date tomorrow = today;
